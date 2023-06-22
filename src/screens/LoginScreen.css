@@ -8,6 +8,7 @@
     width: 100%;
     z-index: 1;
     height: 100vh;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%)
 }
 
 .loginScreen__logo {
@@ -37,9 +38,11 @@
     z-index: 1;
     color: #fff;
     padding: 20px;
-    left: 20%;
-    right: auto;
     text-align: center;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .loginScreen__body > h1 {
@@ -47,3 +50,26 @@
     margin-bottom: 20px;
 }
 
+.loginScreen__input {
+    margin-top: 30px;
+}
+
+.loginScreen__input > form > input {
+    padding: 10px;
+    outline-width: 0;
+    height: 30px;
+    width: 30%;
+    border: none;
+    max-width: 600px;
+}
+
+.loginScreen__getStarted {
+    padding: 16px 20px;
+    font-size: 14px;
+    color: #fff;
+    height: 50px;
+    background-color: #e50914;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+}

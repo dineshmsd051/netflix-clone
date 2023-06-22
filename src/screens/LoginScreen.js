@@ -1,7 +1,9 @@
-import React from 'react';
-import "./LoginScreen.css"
+import React, { useState } from 'react';
+import "./LoginScreen.css";
+import SignUpScreen from './SignUpScreen';
 
 function LoginScreen() {
+  const [signIn, setsignIn] = useState(false)
   return (
     <div className="loginScreen">
       <div className="loginScreen__background">
@@ -14,14 +16,23 @@ function LoginScreen() {
         <div class="loginScreen__gradient"></div>
       </div>
       <div class="loginScreen__body">
-        <>
-          <h1>Unlimited movies, TV shows and more</h1>
-          <h2 style={{paddingBottom: '2rem'}}>Watch anywhere. Cancel anytime.</h2>
-          <h3>
-            Ready to watch? Enter your email to create or restart your
-            membership.
-          </h3>
-        </>
+        {signIn ? ( <SignUpScreen/>) :
+          <>
+            <h1>Unlimited movies, TV shows and more</h1>
+            <h2 style={{paddingBottom: '2rem'}}>Watch anywhere. Cancel anytime.</h2>
+            <h3>
+              Ready to watch? Enter your email to create or restart your
+              membership.
+            </h3>
+
+            <div class="loginScreen__input">
+              <form>
+                <input type="email" 
+                placeholder='Email Address'/>
+                <button className="loginScreen__getStarted" onClick={() => setsignIn(true)}>GET STARTED</button>
+              </form>
+            </div>
+          </> }
       </div>
     </div>
   );
