@@ -6,12 +6,12 @@
     background-color: rgba(0, 0, 0, 0.85);
 }
 
-.signUpScreen > form {
+.signUpScreen > .signUp__wrapper {
     display: flex;
     flex-direction: column;
 }
 
-.signUpScreen > form > h1 { 
+.signUpScreen > .signUp__wrapper > h1 { 
     text-align: left;
     margin-bottom: 25px;
 }
@@ -25,7 +25,7 @@
     color: grey;
 }
 
-.signUpScreen > form > input {
+.signUpScreen > .signUp__wrapper > input {
     outline-width: 0;
     height: 40px;
     margin-bottom: 14px;
@@ -34,7 +34,7 @@
     padding: 5px 15px;
 }
 
-.signUpScreen > form > button {
+.signUpScreen > .signUp__wrapper > button {
     padding: 10px;
     outline-width: 0;
     color: #fff;

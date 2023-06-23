@@ -1,7 +1,14 @@
 import { initializeApp } from "firebase/app";
+import {
+  getFirestore
+} from "firebase/firestore";
+import {
+  getAuth
+} from "firebase/auth";
+
 
 // Your web app's Firebase configuration
- const firebaseConfig = {
+const firebaseConfig = {
   apiKey: "AIzaSyBlU_b7q26_1KyBbwLossYYXc_o4T9DJ2s",
   authDomain: "netflix-clone-f78d1.firebaseapp.com",
   projectId: "netflix-clone-f78d1",
@@ -10,5 +17,7 @@ import { initializeApp } from "firebase/app";
   appId: "1:269330537491:web:9869008c949d1d1481f3e6",
 };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
+  initializeApp(firebaseConfig);
+
+export const db = getFirestore();
+export const auth = getAuth();

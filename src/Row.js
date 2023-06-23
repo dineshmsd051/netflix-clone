@@ -22,7 +22,7 @@ function Row({ title, fetchURL, isLargeRow = false }) {
     <div className="row">
       <h3>{title}</h3>
 
-      <div class="row__posters">
+      <div className="row__posters">
         {movies.map((movie) => (
           <img
             className={`row__poster ${isLargeRow && "row__posterLarge"}`}
