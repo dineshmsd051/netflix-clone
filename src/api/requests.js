@@ -1,5 +1,5 @@
-// keep below api key in env file later 
-
+ 
+// API provided by https://www.themoviedb.org/
 const API_KEY = "637e0d6d06c2a14ec1878ab814e4740b";
 
 const requests = {

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Nav.css"
-import { useHistory } from "react-router-dom/cjs/react-router-dom";
+import { useHistory } from "react-router-dom";
 
 function Nav() {
 
@@ -29,6 +29,7 @@ function Nav() {
           className="nav__logo"
           src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c529.png"
           alt="netflix"
+          onClick={() => history.push("./")}
         />
         <img
           className="nav__avatar"

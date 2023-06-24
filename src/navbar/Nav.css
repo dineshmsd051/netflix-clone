@@ -1,7 +1,6 @@
 .nav {
     top: 0;
     padding: 20px;
-    width: 100%;
     height: 30px;
     z-index: 1;
     transition-timing-function: ease-in;

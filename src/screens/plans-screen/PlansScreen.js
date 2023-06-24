@@ -21,15 +21,16 @@ function PlansScreen() {
     ]
 
   return (
-    <div class="plansScreen">
+    <div className="plansScreen">
       {products.map((productData) => (
-        <div className="plansScreen__plan">
-          <div class="plansScreen__info">
+        <div className="plansScreen__plan" key={productData.id}>
+          <div className="plansScreen__info">
             <h5>{productData.planType}</h5>
             <h6>{productData.screen}</h6>
           </div>
-          <button>Subscribe</button>
-
+          <button onClick={() => alert("feature will available soon! 🥳")}>
+            Subscribe
+          </button>
         </div>
       ))}
     </div>

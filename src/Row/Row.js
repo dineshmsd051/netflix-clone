@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import "./Row.css";
-import api from './api';
-import requests from './requests';
+import api from '../api/api';
 
 function Row({ title, fetchURL, isLargeRow = false }) {
   const [movies, setMovies] = useState([]);
@@ -24,13 +23,15 @@ function Row({ title, fetchURL, isLargeRow = false }) {
 
       <div className="row__posters">
         {movies.map((movie) => (
-          <img
-            className={`row__poster ${isLargeRow && "row__posterLarge"}`}
-            src={`${IMG_BASE_URL}${
-              isLargeRow ? movie.backdrop_path : movie.poster_path
-            }`}
-            alt={movie.name}
-          />
+          <React.Fragment key={movie.id}>
+            <img
+              className={`row__poster ${isLargeRow && "row__posterLarge"}`}
+              src={`${IMG_BASE_URL}${
+                isLargeRow ? movie.backdrop_path : movie.poster_path
+              }`}
+              alt={movie.name}
+            />
+          </React.Fragment>
         ))}
       </div>
     </div>

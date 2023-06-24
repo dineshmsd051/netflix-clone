@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import "./Banner.css";
-import api from "./api";
-import requests from "./requests"
+import api from "../api/api";
+import requests from "../api/requests"
 
 function Banner() {
 
@@ -25,16 +25,15 @@ function Banner() {
       : string;
   }
 
-
   return (
     <header
       className="banner"
       style={{
         width: "auto",
-        backgroundSize: "contain",
+        backgroundSize: "cover",
         backgroundImage: `url("https://image.tmdb.org/t/p/original/${movie?.backdrop_path}")`,
         backgroundPosition: "center center",
-        marginTop: "40px"
+        marginTop: "40px",
       }}
     >
       <div className="banner__contents">
@@ -42,8 +41,18 @@ function Banner() {
           {movie?.title || movie?.name || movie?.original_name}
         </h1>
         <div className="banner__buttons">
-          <button className="banner__button">play</button>
-          <button className="banner__button">my list</button>
+          <button
+            className="banner__button"
+            onClick={() => alert("feature will available soon! 🥳")}
+          >
+            play
+          </button>
+          <button
+            className="banner__button"
+            onClick={() => alert("feature will available soon! 🥳")}
+          >
+            my list
+          </button>
         </div>
         <h1 className="banner__description">
           {truncate(movie?.overview, 200)}
