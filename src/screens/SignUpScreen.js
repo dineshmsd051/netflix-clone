@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./SignUpScreen.css";
-import { db, auth } from "../firebase";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../firebase";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 
 function SignUpScreen() {
 
@@ -9,26 +9,31 @@ function SignUpScreen() {
   const [password, setPassword] = useState("")
 
 
-  const signIn = (e) => {
+  const handleSignIn = (e) => {
     e.preventDefault();
-
-  }
-
-const handleSignUp = () => {
-  if (!email || !password) {
-    alert("email and password is required");
-  }
-
-  createUserWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      console.log('userCredential.user', userCredential.user)
-      alert(`${userCredential.user.email} registered success!`)
+    signInWithEmailAndPassword(auth, email, password)
+    .then((authUser) => {
+      console.log('authUser', authUser)
+    }).catch((error) => {
+      console.log('error', error)
     })
-    .catch((error) => {
-      console.log("error.message", error.message);
-      alert(error.message)
-    });
-};
+  }
+
+  const handleSignUp = () => {
+    if (!email || !password) {
+      alert("email and password is required");
+    }
+
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        console.log('userCredential.user', userCredential.user)
+        alert(`${userCredential.user.email} registered success!`)
+      })
+      .catch((error) => {
+        console.log("error.message", error.message);
+        alert(error.message)
+      });
+  };
 
   return (
     <div className="signUpScreen">
@@ -44,7 +49,7 @@ const handleSignUp = () => {
           placeholder="password"
           onChange={(event) => setPassword(event.target.value)}
         />
-        <button type="submit" onClick={signIn}>
+        <button type="submit" onClick={handleSignIn}>
           Sign In
         </button>
         <h4 className="signUpScreen__signUpNow">
